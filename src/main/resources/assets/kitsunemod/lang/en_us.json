@@ -1,0 +1,9 @@
+{
+  "entity.kitsunemod.kitsune": "Kitsune",
+  "item.kitsunemod.inari_tofu": "Inari Tofu",
+  "item.kitsunemod.promise_ring": "Promise Ring",
+  "item.kitsunemod.kitsune_spawn_egg": "Kitsune Spawn Egg",
+  "itemGroup.kitsunemod": "Kitsune Romance",
+  "tooltip.kitsunemod.inari_tofu": "Every kitsune's favorite gift (+12 affection)",
+  "tooltip.kitsunemod.promise_ring": "Needed to ask a kitsune to be your girlfriend"
+}

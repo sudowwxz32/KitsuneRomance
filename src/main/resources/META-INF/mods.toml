@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="kitsunemod"
+version="1.0.0"
+displayName="Kitsune Romance"
+authors="carpiodanielman3"
+description='''
+Chicas kitsune de 25 años (Yuki, Akane, Hana y Kuro) con chat grupal (IA opcional),
+regalos, citas, noviazgo y harem. Para Minecraft Java 1.20.1 con Forge.
+'''
+
+[[dependencies.kitsunemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.kitsunemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.20.2)"
+    ordering="NONE"
+    side="BOTH"
