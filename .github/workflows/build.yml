@@ -2,7 +2,11 @@ name: Compilar mod
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -19,3 +23,23 @@ jobs:
         with:
           name: KitsuneRomance-1.20.1-forge
           path: build/libs/*.jar
+      - name: Publicar Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: Kitsune Romance 1.0.0 (Forge 1.20.1)
+          body: |
+            Descarga el archivo **.jar** de abajo y ponlo en la carpeta `mods` de Minecraft 1.20.1 con Forge 47.x.
+            Guía rápida en el juego: `/kitsune ayuda`
+          files: build/libs/*.jar
+      - name: Guardar jar en la rama "jar"
+        run: |
+          mkdir /tmp/out && cp build/libs/*.jar /tmp/out/
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout --orphan jar
+          git rm -rf --quiet .
+          cp /tmp/out/*.jar .
+          git add *.jar
+          git commit -m "Jar compilado"
+          git push -f origin jar
